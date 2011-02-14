@@ -1,0 +1,882 @@
+/*
+Theme Name: AgroClimate
+Theme URI: www.agroclimate.org
+Description: The WordPress theme is based on <a href="http://www.agroclimate.org/">www.agroclimate.org</a>.
+Version: 1.0
+Author: Brent Ferraro
+Author URI: http://agroclimate.org/
+Tags: green, custom header, fixed width, two columns
+
+	AgroClimate Default
+	 http://www.agroclimate.org
+	 
+	This theme was designed and built by Brent Ferraro,
+	whose website you will find at http://brentferraro.com/
+
+	The CSS, XHTML and design is released under GPL:
+	http://www.opensource.org/licenses/gpl-license.php
+
+*/
+
+/*------------------------------------------------
+©AgroClimate 2008-2011
+Designed and Coded By Brent Ferraro
+------------------------------------------------ */
+/************************************************************************ 
+CSS Reset via http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+************************************************************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+/*------------------------------------------------
+imports for navigation and table styles
+------------------------------------------------ */
+
+
+@import url(tabe_data.css);
+
+
+
+/*------------------------------------------------
+Global styles
+------------------------------------------------ */
+a img{border:none;}
+
+img:hover{text-decoration:none;}
+body
+{
+	background-color: #FFF;
+	font-size: 100%;
+	font-family: verdana, helvetica, san-serif;
+}
+.toolsUpdate
+{
+	background-color: #FFF;
+	background-image: url(images/tools_bodybg2008.png);
+	background-repeat: repeat-y;
+	background-position: center top;
+}
+
+.boxout {
+	display: block; 
+	clear: both; 
+	font-size: 1px; 
+	height: 1px; 
+	line-height: 1px; 
+	margin: 0;
+}
+a, a:visited{text-decoration:none;color:#0b86a1;}
+a:hover{text-decoration:underline;color:#72b84c;}
+a:active{text-decoration:none;}
+
+.hvlog a:hover{text-decoration:none;}
+
+h1{font-size:1.8em; color:#666; font-weight: 800;}
+h2{font-size:1.5em; padding-top:15px; color:#666;font-weight: 800;}
+h3{font-size:1.1em; padding-top:15px; color:#666;font-weight: 800;}
+h4{font-size:1.0em; padding-top:15px; color:#666; line-height:25px;font-weight: 800;}
+h5{font-size:.9em; padding-top:15px; color:#666;font-weight: 800;}
+h6{font-size:.75em; padding-top:15px; color:#666;font-weight: 800;}
+
+h1#AgroTitle{display:none;}
+
+#mainBodyTools h1{font-size:1.5em; color:#666;float:left;}
+
+dl dt{font-size:.78em; line-height:1.3em; padding-top:10px;}
+dl dd{font-size:.7em; padding:0px;}
+
+#photoWrap p.photoCaption, div p.photoCaption {font-size:.7em !important;color:#aaa;}
+
+#seccLink, span.climatePhase p, #nav ul, #innerWrap ul, .flashText,#outlookBox p,#newsBox p,#newsBoxSpanish,#outlookBoxSpanish p, #innerWrap p.updateDate,a.upButt{font-size: .7em;}
+
+
+blockquote, #cite
+{
+	color: #999;
+	font-size: small;
+	font-style: italic;
+	margin: 15px 15px 15px 0;
+}
+#cite, .ImgCaption {color:#999; font-size:x-small; margin:0;padding:0;line-height: 12px;}
+
+.storyImg{margin:10px 0 0 0;padding: 0;}
+
+.bbutton{font-size:10px; float:right; margin: 5px 20px;padding:5px;background-color:#eee;}
+
+.bbuttonLeft{font-size:10px; float:left;margin: 15px 20px 0 0;padding:5px;background-color:#eee;}
+
+strong{font-weight: 700;}
+
+.postmetadata{margin-top: 25px;}
+.postmetadata small{font-size: .8em; line-height: 1.4em;}
+
+
+/*------------------------------------------------
+Site  Structure
+------------------------------------------------*/
+#wrapper
+{
+	width: 910px;
+	margin: 0 auto;
+	background-image: url(images/agclimate_bodyBg2008-01.png);
+	background-repeat: repeat-y;
+	background-position: center top;
+}
+#toolsWrapper
+{
+	width: 910px;
+	margin: 0 auto;
+	background-image: url(images/tools_bodybg2008.png);
+	background-repeat: repeat-y;
+	background-position: center top;
+}
+#Inwrapper
+{
+	position:relative;
+	width:900px;
+	margin: 0 auto;
+}
+#Inwrapper img{float:left; margin: 2px 5px 5px 0;}
+#topper
+{
+	position:relative;
+	width: 900px;
+	height: 40px;
+	background-image: url(images/agclimate_topNav.png);
+	background-repeat: no-repeat;
+}
+
+/*------------------------------------------------
+left top navigation
+------------------------------------------------*/
+#topperLeft{
+	position:absolute;
+	left:0;
+	margin-left:5px;
+}
+
+/*------------------------------------------------
+right top navigation
+------------------------------------------------*/
+#topperRight{
+	position:absolute;
+	right:5px;
+}
+#topperRight form {float:left;}
+
+#topperLeft ul li{
+	display:inline;
+	float:left;
+
+}
+
+#topperRight p, #topperLeft a, #topperRight a{
+	display:inline;
+	float:left;
+	font-size: .7em;
+	font-weight:700;
+	color:#fff;	
+	padding: 0 5px;
+	line-height: 45px;
+}
+#StateSelect{margin-top:-16;}
+#cse-search-box {margin-top:11px;}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+#topperRight form { margin-top:13px; }
+}
+/*------------------------------------------------
+Heading - climate phase and Logo area
+------------------------------------------------*/
+#branding
+{
+	position:relative;
+	width: 900px;
+	height: 94px;
+	background-image: url(images/header-open.png);
+	background-repeat: no-repeat;
+}
+#brandingSpanish
+{
+	position: relative;
+	width: 900px;
+	height: 94px;
+	background-image: url(images/header-spanish.png);
+	background-repeat: no-repeat;
+}
+span.climatePhase{
+	position:absolute;
+	right:0;
+	width: 310px;
+	height: 90px;
+}
+span.climatePhase h3{
+	font-size:.9em;
+	padding: 15px 5px 0 15px;
+}
+span.climatePhase p{
+	padding: 0 5px 5px 15px;
+	color:#000;
+	line-height: 1.5em;
+}
+h3.nina a{ color: #3CF; }
+h3.nino a{color:#ff0000;}
+h3.nuetral a{color:#0c3;}
+
+#logoLink {
+	position:absolute;
+	top: 10px;
+	left:20px;
+	width: 300px;
+	height:35px;
+	display:block;
+	text-indent: -5000px;
+	padding: 15px 0 0 20px;
+}
+#seccLink{
+	position:absolute;
+	top: 65px;
+	left:150px;
+	color:#777;
+	font-weight:700;
+}
+a#seccLink{color:#777;}
+a#seccLink:hover{color:#999;}
+
+
+/*------------------------------------------------
+Left Navigation
+--------------------------------------------------*/
+#nav {
+	float:left;
+	width:200px;
+	}
+
+#nav ul{
+	list-style-type: none;
+	margin-top:25px;
+	font-weight:700;
+	color:#333;
+}
+
+#nav ul li{
+	position:relative;
+	text-indent: 15px;
+	line-height:25px;
+	border-bottom:1px solid #ccc;
+	font-size: .9em;
+}
+
+#nav ul li a{color:#555; display:block;}
+#nav ul li a:hover{color:#fff;text-decoration:none;}
+
+/*--drop down--*/
+ul ul{word-break: loose; display: none; text-align:left;}
+
+#nav li:hover ul
+{
+	position:absolute;
+	display:block;
+	top:0px;
+	left:200px;
+	width: 245px;
+	background:#abc08b url(images/dropd_bg.png) repeat-y 0 0;
+	color:#fff;
+	margin: 0;
+	padding:0;
+	line-height:25px;
+	z-index:1000;
+	font-size: .98em;
+}
+#nav li:hover ul li.NoLink{
+	text-indent: .8em;
+}
+
+/*--drop down--*/
+ul ul{word-break: loose; display: none; text-align:left;}
+
+#nav li:hover ul
+{
+	position:absolute;
+	display:block;
+	top:0px;
+	left:200px;
+	width: 245px;
+	background:#abc08b url(images/dropd_bg.png) repeat-y 0 0;
+	color:#fff;
+	margin: 0;
+	padding:0;
+	line-height:25px;
+	z-index:1000;
+	font-size: .98em;
+}
+#nav li:hover ul li.NoLink{
+	text-indent: .8em;
+}
+
+/*------------------------------------------------
+Main Content area  
+--------------------------------------------------*/
+#mainBody, #mainBodyTools
+{
+	min-height:700px;
+	width: 700px;
+	float: right;
+	text-align:left;
+}
+
+#mainBodyTools{
+	width: 880px;
+	margin-top:15px;
+	background-color: white;
+}
+
+#mainBody img, #mainBodyTools img{float:left;}
+/*------------------------------------------------
+Inner wrap creates a 20px margin inside of main content area 
+-------------------*/
+#innerWrap{padding:20px; padding-bottom: 25px;float:left;}
+#innerWrap p, #mainBodyTools p{padding: 7px 45px 0px 0px; font-size:.8em;line-height:1.75em;}
+#innerWrap ul
+{
+	list-style-position: inside;
+	line-height: 2em;
+	margin:5px 0 15px 0;
+}
+#innerWrap a{text-decoration:underline;}
+
+
+/*------------------------------------------------
+middleColumn is for the index page only 
+---------------------------------*/
+#middleColumn{
+	top:20px;
+	left:20px;
+	width: 420px;
+	float:left;
+}
+
+.flashText{
+	padding: 15px;
+}
+
+#indexIntro{
+	margin: 15px 5px 5px 20px;
+	font-size:.8em;line-height:1.75em;
+}
+/*------------------------------------------------
+index page only 
+-------------------------------------------------*/
+#outlookBoxSpanish
+{
+	width: 380px;
+	max-height: 180px;
+	margin: 25px 20px 15px 20px;
+	background-image: url(images/outlooksSpanish-bg.png);
+	background-repeat: no-repeat;
+	border-bottom:  1px solid #ccc;
+	z-index:0;
+}
+#outlookBox
+{
+	width: 380px;
+	max-height: 500px;
+	margin: 25px 20px 15px 20px;
+	background-image: url(images/outlooks-bg.png);
+	background-repeat: no-repeat;
+	border-bottom: 1px solid #ccc;
+	z-index: 0;
+}
+#newsBox
+{
+	width: 380px;
+	max-height: 500px;
+	margin: 0 15px 15px 20px;
+	background-image: url(images/news-bg.png);
+	background-repeat: no-repeat;
+	border-bottom:  1px solid #ccc;
+}
+#newsBoxSpanish
+{
+	width: 380px;
+	max-height: 180px;
+	margin: 0 15px 15px 20px;
+	background-image: url(images/newsSpanish-bg.png);
+	background-repeat: no-repeat;
+	border-bottom: 1px solid #ccc;
+}
+
+
+#outlooksTitle, #newsTitle {height: 30px; width: 380px;}
+#outlookBox p, #newsBox p{padding:5px 10px 0 10px;line-height: 1em; letter-spacing: -.04em;} 
+#outlookBox p strong a, #newsBox p strong a{font-size:.9em; margin: 5px 0;line-height: 1.5em; } 
+
+#RightColumn{
+	margin-top: 25px;
+	width: 260px;
+	float:left;
+}
+
+/*------------------------------------------------
+SSP Styles
+--------------------------------------------------*/
+
+/*------------------------------------------------
+left column rotator
+------------------------------------------------*/
+#rotator
+{
+	width: 260px;
+	height: 280px;
+	background-image: url(images/rotator_bg.png);
+	background-repeat: no-repeat;
+	margin-bottom: 10px;
+}
+
+/*------------------------------------------------
+US climate impact movies
+------------------------------------------------*/
+#climateMov
+{
+	width: 600px;
+	height: 422px;
+	margin-bottom: 10px;
+}
+
+
+
+/*------------------------------------------------
+Climate Phase Pie Chart 
+--------------------------------------------------*/
+#pieChartWrap
+{
+	position: relative;
+	width: 260px;
+	height: 120px;
+	margin-bottom: 15px;
+	background-image: url(images/pie_chart_bg.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+#pieChartWrapSpanish
+{
+	position: relative;
+	width: 260px;
+	height: 120px;
+	margin-bottom: 15px;
+	background-image: url(images/enso_forecats_bg_sp.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+#pieChart{
+	padding-top: 0;
+	width: 260px;
+	height: 80px;
+
+}
+a#ricsLink{
+	position:absolute;
+	bottom:3px;
+	left:15px;
+	width: 230px;
+	height: 25px;
+	text-indent:-5000px;
+}
+#pieChartWrap p, #pieChartWrapSpanish p{
+	font-size:9px;
+	font-weight: 700;
+	text-align:center;
+	padding-top:5px;
+	color:#333;
+}
+
+
+.monthG1
+{
+	background-image: url(images/_enso_forecast/enso_forecats_1.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.monthG2
+{
+	background-image: url(images/_enso_forecast/enso_forecats_2.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.monthG3
+{
+	background-image: url(images/_enso_forecast/enso_forecats_3.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.monthG4
+{
+	background-image: url(images/_enso_forecast/enso_forecats_4.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+/*------------------------------------------------
+Spanish site Big Button on Home Page 
+--------------------------------------------------*/
+#bigSpanishButt
+{
+	position: relative;
+	width: 260px;
+	height: 150px;
+	margin: 15px 0;
+	background-image: url(images/agro_spanish_but.gif);
+	text-align:center;
+	color:#333;
+}
+#bigSpanishButt a{	width: 260px; height: 150px; color:#333; display:block;}
+
+#bigSpanishButt h3{font-size:.9em;padding: 0;padding: 75px 0 0 0;line-height: 1.5em;color:#333;}
+#bigSpanishButt a{font-size: .8em;}
+
+
+/*------------------------------------------------
+Florida and Georgia Weather Network Buttons
+---------------------------------------------------*/
+#weather
+{
+	position: relative;
+	width: 271px;
+	height: 71px;
+	background-image: url(images/weather.png);
+	background-repeat: no-repeat;
+	text-indent:-5000px;
+}
+#weatherSpanish
+{
+	position: relative;
+	width: 271px;
+	height: 71px;
+	background-image: url(images/weather-spanish-off.png);
+	background-repeat: no-repeat;
+	text-indent: -5000px;
+}
+a#gawn {
+	position:absolute;
+	bottom:0;
+	left:0;
+	width: 130px;
+	height:47px;
+	display:block;
+}
+a#gawn:hover
+{
+	background-image: url(images/weather_over.png);
+	background-repeat: no-repeat;
+	background-position: 0 -24px;
+}
+a#fawn {
+	position:absolute;
+	bottom:0;
+	left:130px;
+	width: 130px;
+	height:47px;
+	display:block;
+}
+a#fawn:hover
+{
+	background-image: url(images/weather_over.png);
+	background-repeat: no-repeat;
+	background-position: -130px -24px;
+}
+/*------------------------------------------------
+SECC Member Logos on Index 
+--------------------------------------------------*/
+#seccMembers
+{
+	position:relative;
+	width: 700px;
+	height: 325px;
+	background: #FFF url(images/secc_members.png) no-repeat 0 0;
+}
+#seccMembersSpanish
+{
+	position:relative;
+	width: 700px;
+	height: 325px;
+	background: #FFF url(images/secc_membersSpanish.png) no-repeat 0 0;
+}
+#seccMembers a, #seccMembersSpanish a{
+	text-indent: -5000px; 
+	display:block;
+}
+a#floridaSt
+{
+	position: absolute;
+	top: 50px;
+	left: 40px;
+	width: 193px;
+	height:60px;
+	background-image: url(images/seccMembers/fl_st.png);
+}
+a#Georgia
+{
+	position: absolute;
+	top: 45px;
+	left: 260px;
+	width: 178px;
+	height: 58px;
+	background-image: url(images/seccMembers/uga.png);
+}
+a#Florida
+{
+	position: absolute;
+	top: 55px;
+	left: 475px;
+	width: 147px;
+	height: 45px;
+	background-image: url(images/seccMembers/uf.png);
+}
+
+a#Auburn
+{
+	position: absolute;
+	top: 150px;
+	left: 60px;
+	width: 137px;
+	height: 47px;
+	background-image: url(images/seccMembers/auburn.png);
+}
+a#Alabama
+{
+	position: absolute;
+	top: 150px;
+	left: 260px;
+	width: 189px;
+	height: 32px;
+	background-image: url(images/seccMembers/ala_hunts.png);
+}
+a#Miami
+{
+	position: absolute;
+	top: 135px;
+	left: 500px;
+	width: 106px;
+	height: 53px;
+	background: url(images/seccMembers/miami.png);
+}
+a#ncsu
+{
+	position: absolute;
+	top: 235px;
+	left: 145px;
+	width: 150px;
+	height: 25px;
+	background: url(images/seccMembers/ncsu.png);
+}
+a#clemson
+{
+	position: absolute;
+	top: 225px;
+	left: 395px;
+	width: 150px;
+	height: 45px;
+	background: url(images/seccMembers/clemson.png);
+}
+
+
+/*------------------------------------------------
+Image Float Right 
+---------------------------------------------------*/
+.imgFltRight{float:right; border: 1px #ccc solid; padding:5px; margin-right:10px;}
+
+/*------------------------------------------------
+Link List Style
+--------------------------------------------------*/
+ul.toolsList li a, ul.listLinks li, ul.listLinks li a{font-size:1em; line-height:1.8em;}
+
+ol.climate {margin: 15px 20px;}
+ol.climate li{font-size: .8em; line-height:1.5em; }
+
+dl.freezeForcasts {margin-top:3px;padding:3px; border:1px solid #ccc; width: 250px; display:block;background-color: #eee;}
+
+.hortSubNavWrap
+{
+	margin: 5px 0;
+	background-color:#efecec;
+	border-top:1px solid #ccc;
+}
+
+.hortSubNavWrap ul{ height:20px;min-width:250px;margin:0;padding: 0 0 5px 0;}
+
+.hortSubNavWrap ul li
+{
+	display: inline;
+	padding-left: 15px;
+	font-size: 10px;
+	list-style-type: circle;
+	list-style-position: inside;
+	background-image: url(images/0001_arrow.png);
+	background-repeat: no-repeat;
+	background-position: 0 center;
+}
+
+.crops p {padding-top:0;}
+
+#innerWrap p.updateDate
+{
+	margin: 0;
+	padding: 0;
+	color:#333;
+}
+
+.movieWrap {width: 200px; height: 165px; float:left;margin:15px 0 35px 25px;}
+.movieWrap p.Caption {color:#aaa;text-align:center;font-size:.7em !important}
+#photoTable tr{text-align:center !important;}
+
+/*------------------------------------------------
+Tools Page
+--------------------------------------------------*/
+.toolBoxLeft
+{
+	width:315px;
+	margin: 5px 10px 5px 0px;
+	float:left;
+	clear:left;
+}
+
+.toolBoxRight
+{
+	width:315px;
+	margin: 5px 10px 5px 0;
+	float:right;
+	clear:right;
+}
+
+.toolBoxLeft h3, .toolBoxRight h3{padding-bottom: border-bottom:1px solid #ccc;}
+
+.toolBoxRight dl, .toolBoxLeft dl {margin: 0px 15px 25px 0;}
+.toolBoxRight dt a, .toolBoxLeft dt a {font-weight: 700; line-height: 18px;}
+.toolBoxRight dd, .toolBoxLeft dd {line-height: 15px;}
+
+#ToolFrame{position: relative; width:715px; left:70px;}
+
+span a.bbutton{position:relative; top:0;right:0;font-size:10px; width: 90px; display:block; padding:5px;background-color:#eee;font-weight:700;}
+
+.toolsTableClear{
+	clear:both;
+	margin-top:15px;
+}
+
+span a.bbutton_english {
+background-color:#EEEEEE;
+border:1px solid #CCCCCC;
+display:block;
+float:right;
+font-size:12px;
+font-weight:700;
+margin:5px 20px;
+padding:5px;
+width:120px;
+}
+
+.entry{clear:both;}
+/*------------------------------------------------
+Links Page
+--------------------------------------------------*/
+.linkswrap {
+	margin:20px 0;
+	border-bottom:1px solid #ccc;
+}
+
+.linkswrap ul
+{
+	list-style-type: square;
+	list-style-position: inside;
+	color: #999;
+}
+
+ul.list-left{ 
+	width:320px;
+	float:left;
+}
+
+ul.list-right{ 
+	width:320px;
+	float:right;
+}
+
+.LinksPage ul li{	font-size:1em; line-height:1.4em; padding: 5px 0;}
+
+a.upButt {font-size:10px;margin: 15px 20px 0 0;padding:5px;background-color:#eee;line-height:4em;text-decoration:underline;}
+
+.headerRow {border-top: 1px solid#ccc; margin: 5px 0;}
+
+
+
+/*------------------------------------------------
+Footer styles
+--------------------------------------------------*/
+#footer, #footerTools
+{
+	margin:0 auto;
+	width: 910px;
+	min-height: 80px;
+	text-align: center;
+	background-image: url(images/footer-bg.png);
+	background-repeat: no-repeat;
+	background-position: center 0;
+}
+
+#footerTools
+{ 
+	background-image: url(images/Toolfooter.png); 
+	background-repeat: no-repeat;
+	background-position: center 0;
+}
+
+#footer li, #footerTools li{display: inline;line-height: 30px;}
+
+#footer li a, #footerTools li a{
+	font-size: .6em;
+	font-weight:100;
+	padding: 15px 3px 0 3px;
+	color:#fff; display:inline;
+}
