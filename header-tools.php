@@ -33,10 +33,7 @@
 	<!-- Link to main stylesheet -->
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-	
-	<!-- Global files for js -->
-	<script type="text/javascript" src="/agro/wp-content/themes/AgroClimate Default/scripts/global.js"></script>
-	<link rel="stylesheet" href="/wordpress/wp-content/themes/AgroClimate Default/styles/scripts_global.css" type="text/css" media="screen" />
+	<?php wp_head(); ?>
 </head>
 <body>
 <div id="toolsWrapper">
@@ -60,27 +57,7 @@
 			<a href="<?php bloginfo('url'); ?>" title="Home" id="logoLink">AgroClimate Home</a>
 			<a href="http://SEClimate.org/" title="Southeast Climate Consortium Home" id="seccLink">A Service of the Southeast Climate Consortium</a>
 
-		<span class="climatePhase">
-					<?php 
-
-			$original_id = $post->ID;
-			query_posts('category_name=fase-climatica'); //retrieves the newest climate outlook only
-			
-			?>
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>	
-					<h3><a href="<?php the_permalink(); ?>">
-                                        <font color="#00FF00"><?php the_title(); ?></a></h3></font>
-                                        <!--#00FF00: Neutral
-                                            Tomato:El Niño
-                                            #3BB9FF: La Niña-->
-					<?php the_excerpt(); ?>
-				<?php endwhile; ?>
-			<?php endif; ?>
-			<?php  
-			
-			query_posts('page_id='.$original_id);
-			
-			?>
-
-		</span>
-</div>
+			<span class="climatePhase">
+				<!-- Climate Phase Indicator goes here -->
+			</span>
+		</div>
