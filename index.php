@@ -8,6 +8,7 @@ get_header(); ?>
 
 <div id="mainBody">
 <div id="innerWrap">
+<div id="middleColumn">
 	<?php if (have_posts()) : ?>
 
 		<?php while (have_posts()) : the_post(); ?>
@@ -32,6 +33,9 @@ get_header(); ?>
 		<?php get_search_form(); ?>
 
 	<?php endif; ?>
+
+</div>
+<div id="RightColumn"></div>
 
 </div>
 </div>

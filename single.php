@@ -8,6 +8,8 @@ get_header(); ?>
 
 <div id="mainBody">
 <div id="innerWrap">
+<div id="middleColumn">
+
 
 					<?php
 			/* Run the loop to output the posts.
@@ -16,7 +18,9 @@ get_header(); ?>
 			 */
 			 get_template_part( 'loop', 'index' );
 			?>
+</div>
 
+<div id="RightColumn"></div>
 </div>
 </div>
 <?php get_sidebar(); ?>

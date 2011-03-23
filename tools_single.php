@@ -1,13 +1,15 @@
 <?php
 /**
  * @package WordPress
- * @subpackage agroclimate
+ * @subpackage Toolbox
+ 
+ * Template Name: Tools with sidebar
  */
 
 get_header(); ?>
+
 <div id="mainBody">
-<div id="innerWrap">
-<div id="middleColumn">
+<div id="innerWrap" style="padding-right: 20px;">
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<div class="post" id="post-<?php the_ID(); ?>">
 		<h1><?php the_title(); ?></h1>
@@ -20,16 +22,13 @@ get_header(); ?>
 		</div>
 		<?php endwhile; endif; ?>
 	<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
-</div>
-
-<div id="RightColumn"></div>
-
 
 </div>
 </div>
 <?php get_sidebar(); ?>
 
-<span class="boxout"></span>
+<span class="boxout">&nbsp;</span>
 
 </div>
 <?php get_footer(); ?>
+

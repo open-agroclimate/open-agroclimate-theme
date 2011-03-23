@@ -91,6 +91,7 @@ body
 	background-color: #FFF;
 	font-size: 100%;
 	font-family: verdana, helvetica, san-serif;
+	margin: 0;
 }
 .toolsUpdate
 {
@@ -104,7 +105,6 @@ body
 	display: block; 
 	clear: both; 
 	font-size: 1px; 
-	height: 1px; 
 	line-height: 1px; 
 	margin: 0;
 }
@@ -377,7 +377,7 @@ Main Content area
 /*------------------------------------------------
 Inner wrap creates a 20px margin inside of main content area 
 -------------------*/
-#innerWrap{padding:20px; padding-bottom: 25px;float:left;}
+#innerWrap{padding:20px 0px 20px 20px; padding-bottom: 25px;float:left;}
 #innerWrap p, #mainBodyTools p{padding: 7px 45px 0px 0px; font-size:.8em;line-height:1.75em;}
 #innerWrap ul
 {
@@ -455,7 +455,7 @@ index page only
 
 #RightColumn{
 	margin-top: 25px;
-	width: 260px;
+	width: 240px;
 	float:left;
 }
 
