@@ -6,11 +6,12 @@
 ?>
 <div id="nav">
 <ul>
-	<?php wp_nav_menu(array(
-		 'menu'=>'primary' ,
+    <?php 
+    wp_nav_menu(array (
+		 'menu'            => 'primary-menu',
 		 'container'       => false, 
-		 'theme_location'  => 'primary')
-		 );
+		 'theme_location'  => 'primary'
+     ) );
 	?>
 </ul>
 <!-- alteracao 02-06 -->

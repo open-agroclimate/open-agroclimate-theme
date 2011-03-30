@@ -27,7 +27,7 @@
 			<div id="topperLeft">
 					<?php wp_nav_menu(array(
 						 'menu'=>'header-menu' ,
-						 'theme_location'  => 'header-menu')
+						 'theme_location'  => 'header')
 		 				);
 					?>
 
@@ -35,5 +35,34 @@
 		</div>
 		<div id="branding">
 			<a href="<?php bloginfo('url'); ?>" title="Home" id="logoLink">AgroClimate Home</a>
-			<a href="http://SEClimate.org/" title="Southeast Climate Consortium Home" id="seccLink">A Service of the Southeast Climate Consortium</a>
+            <a href="http://SEClimate.org/" title="<?php __('Southeast Climate Consortium Home', 'oac-theme'); ?>" id="seccLink"><?php __( 'A Service of the Southeast Climate Consortium', 'oac-theme' ); ?></a>
+            <?php 
+                $ensoid    = get_option( 'oac_display_enso', '' );
+                $ensotext  = get_option('oac_display_enso_text', '');
+                $ensocolor = $ensophase = '';
+                $display   = true;
+                switch( $ensoid ) {
+                    case 'N':
+                        $ensocolor = 'neutral';
+                        $ensophase = __( 'Neutral ');
+                        break;
+                    case 'E':
+                        $ensocolor = 'nino';
+                        $ensophase = __( 'El Ni&#241;o' );
+                        break;
+                    case 'L':
+                        $ensocolor = 'nina';
+                        $ensophase = __( 'La Ni&#241;a' );
+                        break;
+                    default:
+                        $display = false;
+                        break;
+                }
+                if( $display ) {
+            ?>
+            <span class="climatePhase">
+                <h3 class="<?php echo $ensocolor.'">'.__( 'Current Phase', 'oac-theme').': '.$ensophase; ?></h3>
+                <p><?php echo( nl2br( $ensotext ) ); ?></p>
+            </span>
+            <?php } ?>
 		</div>

@@ -35,12 +35,16 @@ get_header(); ?>
 	<?php endif; ?>
 
 </div>
-<div id="RightColumn"></div>
+<div id="RightColumn">
+<?php dynamic_sidebar( 'sidebar-1' ); ?>
+</div>
 
 </div>
 </div>
-<?php get_sidebar(); ?>
-
+<?php 
+    get_sidebar();
+    dynamic_sidebar( 'sidebar-2' );
+?>
 <span class="boxout">&nbsp;</span>
 
 </div>

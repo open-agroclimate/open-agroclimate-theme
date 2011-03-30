@@ -43,7 +43,7 @@
 			<div id="topperLeft">
 					<?php wp_nav_menu(array(
 						 'menu'=>'header-menu' ,
-						 'theme_location'  => 'header-menu')
+						 'theme_location'  => 'header')
 		 				);
 					?>
 

@@ -7,7 +7,7 @@
  * @subpackage agroclimate
  */
 
-get_header(tools); ?>
+get_header('tools'); ?>
 
 		<div id="mainBodyTools" class="full-width">
 				<?php the_post(); ?>
@@ -27,6 +27,6 @@ get_header(tools); ?>
 <span class="boxout">&nbsp;</span>
 
 </div>
-<?php get_footer(toolsFooter); ?>
+<?php get_footer('toolsFooter'); ?>
 
 

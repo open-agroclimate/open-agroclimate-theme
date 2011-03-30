@@ -8,7 +8,7 @@
  * Make theme available for translation
  * Translations can be filed in the /languages/ directory
  */
-load_theme_textdomain( 'openAgroClimate', TEMPLATEPATH . '/languages' );
+load_theme_textdomain( 'oac-theme', TEMPLATEPATH . '/languages' );
 
 $locale = get_locale();
 $locale_file = TEMPLATEPATH . "/languages/$locale.php";
@@ -25,9 +25,9 @@ if ( ! isset( $content_width ) )
  * This theme uses wp_nav_menu() in one location.
  */
 register_nav_menus( array(
-	'primary' => __( 'Primary Menu', 'primary' ),
-	'header' => __( 'Header Menu', 'header-menu' ),
-	'footer' => __( 'Footer Menu', 'footer-menu' ),
+	'primary' => __( 'Primary Menu', 'oac-theme' ),
+	'header'  => __( 'Header Menu',  'oac-theme' ),
+	'footer'  => __( 'Footer Menu',  'oac-theme' )
 ) );
 
 // Removes ul class from wp_nav_menu
@@ -55,7 +55,7 @@ add_filter( 'wp_page_menu_args', 'agroclimate_page_menu_args' );
  */
 function openAgroClimate_widgets_init() {
 	register_sidebar( array (
-		'name' => __( 'Sidebar 1', 'openAgroClimate' ),
+		'name' => __( 'Sidebar 1', 'oac-theme' ),
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -64,9 +64,9 @@ function openAgroClimate_widgets_init() {
 	) );
 
 	register_sidebar( array (
-		'name' => __( 'Sidebar 2', 'openAgroClimate' ),
+		'name' => __( 'Sidebar 2', 'oac-theme' ),
 		'id' => 'sidebar-2',
-		'description' => __( 'An optional second sidebar area', 'openAgroClimate' ),
+		'description' => __( 'An optional second sidebar area', 'oac-theme' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h1 class="widget-title">',

@@ -22,13 +22,15 @@ get_header(); ?>
 	<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
 </div>
 
-<div id="RightColumn"></div>
+<div id="RightColumn"><?php dynamic_sidebar( 'sidebar-1' ); ?></div>
 
 
 </div>
 </div>
-<?php get_sidebar(); ?>
-
+<?php 
+    get_sidebar();
+    dynamic_sidebar( 'sidebar-2' ); 
+?>
 <span class="boxout"></span>
 
 </div>

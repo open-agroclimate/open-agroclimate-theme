@@ -10,9 +10,9 @@
 
 <div id="footerTools">
 	<?php wp_nav_menu(array(
-		 'menu'=>'footer-menu' ,
-		 'container'       => false, 
-		 'theme_location'  => 'footer-menu')
+		 'menu'            => 'footer-menu' ,
+		 'container'       => '', 
+		 'theme_location'  => 'footer')
 		 );
 	?>
 </div>
