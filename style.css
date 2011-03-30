@@ -261,9 +261,9 @@ span.climatePhase p{
 	color:#000;
 	line-height: 1.5em;
 }
-h3.nina a{ color: #3CF; }
-h3.nino a{color:#ff0000;}
-h3.nuetral a{color:#0c3;}
+h3.nina { color: #3CF; }
+h3.nino {color:#ff0000;}
+h3.neutral {color:#0c3;}
 
 #logoLink {
 	position:absolute;
@@ -458,6 +458,18 @@ index page only
 	width: 240px;
 	float:left;
 }
+
+.widget {
+    width: 95%;
+    font-size: .7em;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #cecece;
+}
+
+.widget h1 {
+    font-size: 1.25em;
+    margin-bottom: 5px;
 
 /*------------------------------------------------
 SSP Styles

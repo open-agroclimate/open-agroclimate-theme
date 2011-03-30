@@ -57,8 +57,8 @@ function openAgroClimate_widgets_init() {
 	register_sidebar( array (
 		'name' => __( 'Sidebar 1', 'oac-theme' ),
 		'id' => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => "</div>",
 		'before_title' => '<h1 class="widget-title">',
 		'after_title' => '</h1>',
 	) );
@@ -73,4 +73,34 @@ function openAgroClimate_widgets_init() {
 		'after_title' => '</h1>',
 	) );	
 }
+
+
+function displayENSO() {
+    $ensoid    = get_option( 'oac_display_enso', '' );
+    $ensotext  = get_option('oac_display_enso_text', '');
+    $ensocolor = $ensophase = '';
+    $display   = true;
+    switch( $ensoid ) {
+        case 'N':
+            $ensocolor = 'neutral';
+            $ensophase = __( 'Neutral ');
+            break;
+        case 'E':
+            $ensocolor = 'nino';
+            $ensophase = __( 'El Ni&#241;o' );
+            break;
+        case 'L':
+            $ensocolor = 'nina';
+            $ensophase = __( 'La Ni&#241;a' );
+            break;
+        default:
+            $display = false;
+            break;
+    }
+    if( $display ) {
+        echo '<span class="climatePhase">';
+        echo '<h3 class="'.$ensocolor.'">'.__( 'Current Phase', 'oac-theme').': '.$ensophase.'</h3>';
+        echo '<p>'.nl2br( $ensotext ).'</p></span>';
+    } 
+}    
 add_action( 'init', 'openAgroClimate_widgets_init' );

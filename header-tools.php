@@ -56,8 +56,5 @@
 		<div id="branding">
 			<a href="<?php bloginfo('url'); ?>" title="Home" id="logoLink">AgroClimate Home</a>
 			<a href="http://SEClimate.org/" title="Southeast Climate Consortium Home" id="seccLink">A Service of the Southeast Climate Consortium</a>
-
-			<span class="climatePhase">
-				<!-- Climate Phase Indicator goes here -->
-			</span>
-		</div>
+            <?php displayENSO(); ?>
+        </div>
