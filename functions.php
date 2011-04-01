@@ -8,12 +8,7 @@
  * Make theme available for translation
  * Translations can be filed in the /languages/ directory
  */
-load_theme_textdomain( 'oac-theme', TEMPLATEPATH . '/languages' );
-
-$locale = get_locale();
-$locale_file = TEMPLATEPATH . "/languages/$locale.php";
-if ( is_readable( $locale_file ) )
-	require_once( $locale_file );
+load_theme_textdomain( 'oac_theme' );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -25,9 +20,9 @@ if ( ! isset( $content_width ) )
  * This theme uses wp_nav_menu() in one location.
  */
 register_nav_menus( array(
-	'primary' => __( 'Primary Menu', 'oac-theme' ),
-	'header'  => __( 'Header Menu',  'oac-theme' ),
-	'footer'  => __( 'Footer Menu',  'oac-theme' )
+	'primary' => __( 'Primary Menu', 'oac_theme' ),
+	'header'  => __( 'Header Menu',  'oac_theme' ),
+	'footer'  => __( 'Footer Menu',  'oac_theme' )
 ) );
 
 // Removes ul class from wp_nav_menu
@@ -55,7 +50,7 @@ add_filter( 'wp_page_menu_args', 'agroclimate_page_menu_args' );
  */
 function openAgroClimate_widgets_init() {
 	register_sidebar( array (
-		'name' => __( 'Sidebar 1', 'oac-theme' ),
+		'name' => __( 'Sidebar 1', 'oac_theme' ),
 		'id' => 'sidebar-1',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => "</div>",
@@ -64,9 +59,9 @@ function openAgroClimate_widgets_init() {
 	) );
 
 	register_sidebar( array (
-		'name' => __( 'Sidebar 2', 'oac-theme' ),
+		'name' => __( 'Sidebar 2', 'oac_theme' ),
 		'id' => 'sidebar-2',
-		'description' => __( 'An optional second sidebar area', 'oac-theme' ),
+		'description' => __( 'An optional second sidebar area', 'oac_theme' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h1 class="widget-title">',
@@ -99,7 +94,7 @@ function displayENSO() {
     }
     if( $display ) {
         echo '<span class="climatePhase">';
-        echo '<h3 class="'.$ensocolor.'">'.__( 'Current Phase', 'oac-theme').': '.$ensophase.'</h3>';
+        echo '<h3 class="'.$ensocolor.'">'.__( 'Current Phase', 'oac_theme').': '.$ensophase.'</h3>';
         echo '<p>'.nl2br( $ensotext ).'</p></span>';
     } 
 }    
