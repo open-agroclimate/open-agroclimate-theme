@@ -35,6 +35,6 @@
 		</div>
 		<div id="branding">
 			<a href="<?php bloginfo('url'); ?>" title="Home" id="logoLink">AgroClimate Home</a>
-            <a href="http://SEClimate.org/" title="<?php __('Southeast Climate Consortium Home', 'oac-theme'); ?>" id="seccLink"><?php __( 'A Service of the Southeast Climate Consortium', 'oac-theme' ); ?></a>
+            <a href="http://SEClimate.org/" title="<?php _e('Southeast Climate Consortium Home', 'oac-theme'); ?>" id="seccLink"><?php __( 'A Service of the Southeast Climate Consortium', 'oac-theme' ); ?></a>
             <?php displayENSO(); ?>
         </div>
