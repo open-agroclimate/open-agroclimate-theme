@@ -17,9 +17,6 @@ get_header('tools'); ?>
 				<span class="boxout">&nbsp;</span>
 
 						<?php the_content(); ?>
-						<?php edit_post_link( __( 'Edit', 'agroclimate' ), '<span class="edit-link">', '</span>' ); ?>
-
-				<?php comments_template( '', true ); ?>
 
 			<span class="boxout"></span>
 
